@@ -6,97 +6,213 @@
 
 <title>Image Tools Pro – Free Online Image Tools</title>
 
-<meta name="description" content="Free online image tools for compression, resizing, conversion, cropping, WebP, Base64 and more.">
+<meta name="description" content="Free online image tools to compress, resize, convert, crop, rotate and optimize images easily.">
 <meta name="robots" content="index, follow">
 
 <style>
+:root{
+  --bg:#f6f8ff;
+  --card:rgba(255,255,255,.82);
+  --text:#111827;
+  --muted:#667085;
+  --border:#e7eaf3;
+  --primary:#5b5cf0;
+  --primary2:#7c3aed;
+  --shadow:0 15px 45px rgba(42,50,100,.10);
+}
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
 
-body{
-  font-family:Arial,sans-serif;
-  background:#f5f7fb;
-  color:#172033;
-  line-height:1.6;
+html{
+  scroll-behavior:smooth;
 }
+
+body{
+  font-family:Inter,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 10% 5%,rgba(99,102,241,.13),transparent 28%),
+    radial-gradient(circle at 90% 15%,rgba(124,58,237,.10),transparent 25%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  transition:.3s;
+}
+
+/* HEADER */
 
 header{
-  background:#4f46e5;
-  color:white;
-  padding:18px 15px;
   position:sticky;
   top:0;
-  z-index:100;
+  z-index:1000;
+  backdrop-filter:blur(18px);
+  background:rgba(255,255,255,.75);
+  border-bottom:1px solid rgba(220,224,240,.7);
 }
 
-.header-inner{
-  max-width:1100px;
+.navbar{
+  max-width:1150px;
   margin:auto;
+  padding:14px 18px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:10px;
 }
 
 .logo{
-  font-size:20px;
-  font-weight:bold;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:19px;
+  font-weight:800;
+  text-decoration:none;
+  color:var(--text);
+}
+
+.logo-icon{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  color:white;
+  box-shadow:0 8px 20px rgba(91,92,240,.3);
 }
 
 .theme-btn{
-  border:0;
-  background:white;
-  color:#4f46e5;
-  padding:9px 12px;
-  border-radius:8px;
+  border:1px solid var(--border);
+  background:var(--card);
+  width:42px;
+  height:42px;
+  border-radius:13px;
   cursor:pointer;
+  font-size:18px;
 }
 
+/* HERO */
+
 .hero{
-  max-width:1100px;
+  max-width:1150px;
   margin:auto;
-  padding:55px 18px 35px;
+  padding:70px 18px 45px;
   text-align:center;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 14px;
+  border-radius:30px;
+  background:rgba(91,92,240,.10);
+  color:var(--primary);
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:20px;
 }
 
 .hero h1{
-  font-size:36px;
-  margin-bottom:12px;
+  font-size:clamp(38px,7vw,66px);
+  line-height:1.05;
+  letter-spacing:-2px;
+  max-width:850px;
+  margin:auto;
+}
+
+.gradient-text{
+  background:linear-gradient(90deg,#4f46e5,#7c3aed,#ec4899);
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
 .hero p{
-  max-width:700px;
-  margin:auto;
-  color:#5b6475;
+  max-width:680px;
+  margin:20px auto 0;
+  color:var(--muted);
   font-size:17px;
 }
 
-.search{
-  max-width:600px;
-  margin:25px auto 10px;
+/* SEARCH */
+
+.search-wrap{
+  max-width:650px;
+  margin:30px auto 0;
+  position:relative;
 }
 
-.search input{
-  width:100%;
-  padding:14px;
-  border:1px solid #d7dbe5;
-  border-radius:10px;
-  font-size:16px;
+.search-icon{
+  position:absolute;
+  left:18px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:19px;
 }
+
+.search-box{
+  width:100%;
+  padding:17px 20px 17px 50px;
+  border-radius:17px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.9);
+  outline:none;
+  font-size:16px;
+  box-shadow:var(--shadow);
+}
+
+.search-box:focus{
+  border-color:var(--primary);
+}
+
+/* QUICK STATS */
+
+.stats{
+  max-width:700px;
+  margin:28px auto 0;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.stat{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:9px 15px;
+  border-radius:30px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* MAIN */
 
 .container{
-  max-width:1100px;
+  max-width:1150px;
   margin:auto;
-  padding:20px 18px 50px;
+  padding:20px 18px 70px;
 }
 
-.section-title{
-  text-align:center;
-  margin:25px 0;
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin:20px 0 22px;
 }
+
+.section-head h2{
+  font-size:27px;
+}
+
+.section-head p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* TOOLS */
 
 .tools-grid{
   display:grid;
@@ -105,100 +221,270 @@ header{
 }
 
 .tool-card{
-  background:white;
-  border:1px solid #e5e7eb;
-  border-radius:15px;
-  padding:22px;
+  position:relative;
+  overflow:hidden;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:24px;
   text-decoration:none;
   color:inherit;
-  transition:.2s;
+  box-shadow:0 8px 30px rgba(40,45,90,.06);
+  transition:.25s ease;
+}
+
+.tool-card::after{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:rgba(99,102,241,.07);
+  right:-55px;
+  top:-55px;
 }
 
 .tool-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  transform:translateY(-6px);
+  box-shadow:0 18px 45px rgba(40,45,90,.13);
+  border-color:rgba(91,92,240,.25);
 }
 
 .tool-icon{
-  font-size:35px;
-  margin-bottom:10px;
+  width:55px;
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:16px;
+  background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+  font-size:27px;
+  margin-bottom:17px;
 }
 
 .tool-card h3{
+  font-size:18px;
   margin-bottom:7px;
-  color:#272f40;
 }
 
 .tool-card p{
-  color:#687386;
+  color:var(--muted);
   font-size:14px;
 }
 
-.info{
-  background:white;
-  border-radius:15px;
-  padding:25px;
-  margin-top:40px;
-  border:1px solid #e5e7eb;
+.open-tool{
+  display:inline-block;
+  margin-top:17px;
+  color:var(--primary);
+  font-size:13px;
+  font-weight:700;
 }
 
-.info h2{
-  margin-bottom:10px;
+/* FEATURED */
+
+.featured{
+  margin:45px 0;
+  padding:30px;
+  border-radius:26px;
+  color:white;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(255,255,255,.18),transparent 25%),
+    linear-gradient(135deg,#4f46e5,#7c3aed);
+  box-shadow:0 20px 55px rgba(79,70,229,.25);
 }
+
+.featured h2{
+  font-size:27px;
+  margin-bottom:8px;
+}
+
+.featured p{
+  opacity:.9;
+  max-width:650px;
+}
+
+.featured-items{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.featured-item{
+  padding:9px 13px;
+  border-radius:12px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.18);
+  font-size:13px;
+}
+
+/* INFO */
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:35px;
+}
+
+.info-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:23px;
+}
+
+.info-card span{
+  font-size:25px;
+}
+
+.info-card h3{
+  margin:10px 0 5px;
+}
+
+.info-card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* FOOTER */
 
 footer{
-  background:#111827;
-  color:#d1d5db;
+  background:#0f172a;
+  color:#cbd5e1;
+  padding:45px 18px 30px;
+}
+
+.footer-inner{
+  max-width:1150px;
+  margin:auto;
   text-align:center;
-  padding:30px 15px;
 }
 
-footer a{
-  color:#a5b4fc;
+.footer-logo{
+  color:white;
+  font-size:20px;
+  font-weight:800;
+}
+
+.footer-text{
+  max-width:600px;
+  margin:10px auto 20px;
+  font-size:14px;
+  color:#94a3b8;
+}
+
+.footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.footer-links a{
+  color:#cbd5e1;
   text-decoration:none;
-  margin:0 7px;
+  font-size:13px;
 }
 
-@media(max-width:800px){
+.copyright{
+  margin-top:25px;
+  padding-top:20px;
+  border-top:1px solid #263244;
+  font-size:12px;
+  color:#64748b;
+}
+
+/* DARK MODE */
+
+body.dark{
+  --bg:#080b16;
+  --card:rgba(18,24,42,.88);
+  --text:#f8fafc;
+  --muted:#aab4c7;
+  --border:#273149;
+  background:
+    radial-gradient(circle at 10% 5%,rgba(99,102,241,.18),transparent 28%),
+    radial-gradient(circle at 90% 15%,rgba(124,58,237,.16),transparent 25%),
+    #080b16;
+}
+
+body.dark header{
+  background:rgba(8,11,22,.78);
+}
+
+body.dark .logo{
+  color:white;
+}
+
+body.dark .search-box{
+  background:#12182a;
+  color:white;
+}
+
+body.dark .tool-icon{
+  background:#1b2338;
+}
+
+body.dark .theme-btn{
+  color:white;
+  background:#12182a;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
   .tools-grid{
     grid-template-columns:repeat(2,1fr);
   }
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
 }
 
-@media(max-width:520px){
+@media(max-width:600px){
+
+  .hero{
+    padding-top:50px;
+  }
+
   .hero h1{
-    font-size:28px;
+    letter-spacing:-1px;
+  }
+
+  .hero p{
+    font-size:15px;
   }
 
   .tools-grid{
     grid-template-columns:1fr;
   }
+
+  .section-head{
+    display:block;
+  }
+
+  .section-head p{
+    margin-top:5px;
+  }
+
+  .featured{
+    padding:25px 20px;
+  }
+
+  .featured h2{
+    font-size:23px;
+  }
+
 }
 
-.dark{
-  background:#111827;
-  color:#f3f4f6;
-}
+/* HIDDEN SEARCH */
 
-.dark .hero p,
-.dark .tool-card p{
-  color:#cbd5e1;
-}
-
-.dark .tool-card,
-.dark .info{
-  background:#1f2937;
-  border-color:#374151;
-}
-
-.dark .tool-card h3{
-  color:white;
-}
-
-.dark .search input{
-  background:#1f2937;
-  color:white;
-  border-color:#4b5563;
+.hidden{
+  display:none !important;
 }
 </style>
 </head>
@@ -206,161 +492,369 @@ footer a{
 <body>
 
 <header>
-  <div class="header-inner">
-    <div class="logo">🖼️ Image Tools Pro</div>
-    <button class="theme-btn" onclick="toggleDark()">🌙 Theme</button>
+  <div class="navbar">
+
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🖼️</span>
+      <span>Image Tools Pro</span>
+    </a>
+
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+      🌙
+    </button>
+
   </div>
 </header>
 
+
 <section class="hero">
 
-  <h1>Free Online Image Tools</h1>
+  <div class="badge">
+    ⚡ Simple • Fast • Online
+  </div>
+
+  <h1>
+    Powerful Image Tools,
+    <span class="gradient-text">Made Simple.</span>
+  </h1>
 
   <p>
     Compress, resize, convert, crop and optimize your images
-    easily from your browser.
+    with easy-to-use online tools.
   </p>
 
-  <div class="search">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+
     <input
-      type="text"
       id="searchBox"
-      placeholder="🔍 Search image tools..."
-      onkeyup="searchTools()">
+      class="search-box"
+      type="search"
+      placeholder="Search image tools..."
+      oninput="searchTools()">
+  </div>
+
+  <div class="stats">
+    <div class="stat">🛠️ 10+ Tools</div>
+    <div class="stat">📱 Mobile Friendly</div>
+    <div class="stat">⚡ Easy to Use</div>
   </div>
 
 </section>
 
+
 <main class="container">
 
-  <h2 class="section-title">🛠️ Image Tools</h2>
+  <div class="section-head">
+    <div>
+      <h2>Explore Image Tools</h2>
+      <p>Choose a tool and get started.</p>
+    </div>
+  </div>
+
 
   <div class="tools-grid" id="toolsGrid">
 
+
     <a href="#" class="tool-card">
+
       <div class="tool-icon">📦</div>
+
       <h3>Image Compressor</h3>
-      <p>Reduce image file size while keeping good quality.</p>
+
+      <p>
+        Reduce image file size while maintaining
+        good visual quality.
+      </p>
+
+      <span class="open-tool">Open Tool →</span>
+
     </a>
 
+
     <a href="#" class="tool-card">
+
       <div class="tool-icon">📐</div>
+
       <h3>Image Resizer</h3>
-      <p>Resize images to your preferred width and height.</p>
+
+      <p>
+        Quickly resize your image to your desired
+        dimensions.
+      </p>
+
+      <span class="open-tool">Open Tool →</span>
+
     </a>
 
+
     <a href="#" class="tool-card">
+
       <div class="tool-icon">🖼️</div>
+
       <h3>JPG to PNG</h3>
-      <p>Convert JPG images into PNG format.</p>
+
+      <p>
+        Convert JPG images into PNG format easily.
+      </p>
+
+      <span class="open-tool">Open Tool →</span>
+
     </a>
 
+
     <a href="#" class="tool-card">
+
       <div class="tool-icon">🔄</div>
+
       <h3>PNG to JPG</h3>
-      <p>Convert PNG images into JPG format.</p>
+
+      <p>
+        Convert PNG images into JPG format.
+      </p>
+
+      <span class="open-tool">Open Tool →</span>
+
     </a>
 
+
     <a href="#" class="tool-card">
+
       <div class="tool-icon">🔁</div>
+
       <h3>Image Converter</h3>
-      <p>Convert images between common formats.</p>
+
+      <p>
+        Convert images between popular formats.
+      </p>
+
+      <span class="open-tool">Open Tool →</span>
+
     </a>
 
+
     <a href="#" class="tool-card">
+
       <div class="tool-icon">✂️</div>
+
       <h3>Image Cropper</h3>
-      <p>Crop your image to the exact area you need.</p>
+
+      <p>
+        Crop your images to the exact area you need.
+      </p>
+
+      <span class="open-tool">Open Tool →</span>
+
     </a>
 
+
     <a href="#" class="tool-card">
+
       <div class="tool-icon">📊</div>
+
       <h3>Image Size Checker</h3>
-      <p>Check image dimensions and file information.</p>
+
+      <p>
+        Check image dimensions and file information.
+      </p>
+
+      <span class="open-tool">Open Tool →</span>
+
     </a>
 
+
     <a href="#" class="tool-card">
+
       <div class="tool-icon">🔤</div>
+
       <h3>Image to Base64</h3>
-      <p>Convert images into Base64 encoded data.</p>
+
+      <p>
+        Convert images into Base64 encoded data.
+      </p>
+
+      <span class="open-tool">Open Tool →</span>
+
     </a>
 
+
     <a href="#" class="tool-card">
+
       <div class="tool-icon">⚡</div>
+
       <h3>WebP Converter</h3>
-      <p>Convert supported images to modern WebP format.</p>
+
+      <p>
+        Convert supported images to WebP format.
+      </p>
+
+      <span class="open-tool">Open Tool →</span>
+
     </a>
 
+
     <a href="#" class="tool-card">
+
       <div class="tool-icon">↻</div>
+
       <h3>Image Rotator</h3>
-      <p>Rotate images clockwise or counter-clockwise.</p>
+
+      <p>
+        Rotate images quickly in your browser.
+      </p>
+
+      <span class="open-tool">Open Tool →</span>
+
     </a>
 
   </div>
 
-  <section class="info">
 
-    <h2>Why use Image Tools Pro?</h2>
+  <section class="featured">
 
-    <p>
-      Image Tools Pro is designed to provide simple and
-      convenient image utilities directly from your browser.
-      Our goal is to make common image tasks easy on both
-      mobile phones and computers.
-    </p>
-
-    <br>
-
-    <h2>Privacy</h2>
+    <h2>✨ Your Image Toolkit</h2>
 
     <p>
-      We aim to process images directly in your browser
-      whenever possible. Do not upload sensitive images
-      until the individual tool's processing method is clearly
-      explained.
+      Everything you need for common image editing
+      and optimization tasks in one simple place.
     </p>
+
+    <div class="featured-items">
+
+      <div class="featured-item">📦 Compress</div>
+      <div class="featured-item">📐 Resize</div>
+      <div class="featured-item">🔄 Convert</div>
+      <div class="featured-item">✂️ Crop</div>
+      <div class="featured-item">⚡ WebP</div>
+      <div class="featured-item">↻ Rotate</div>
+
+    </div>
 
   </section>
 
+
+  <div class="section-head">
+
+    <div>
+      <h2>Why Image Tools Pro?</h2>
+      <p>Built to keep image tasks simple.</p>
+    </div>
+
+  </div>
+
+
+  <div class="info-grid">
+
+    <div class="info-card">
+
+      <span>⚡</span>
+
+      <h3>Fast & Simple</h3>
+
+      <p>
+        Clean tools designed for quick image tasks
+        without unnecessary complexity.
+      </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+      <span>📱</span>
+
+      <h3>Mobile Friendly</h3>
+
+      <p>
+        Designed to work comfortably on phones,
+        tablets and desktop devices.
+      </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+      <span>🔒</span>
+
+      <h3>Privacy Focused</h3>
+
+      <p>
+        We aim to process images in the browser
+        whenever the individual tool supports it.
+      </p>
+
+    </div>
+
+  </div>
+
 </main>
+
 
 <footer>
 
-  <p>© 2026 Image Tools Pro</p>
+  <div class="footer-inner">
 
-  <p>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-    <a href="#">Privacy</a>
-    <a href="#">Terms</a>
-  </p>
+    <div class="footer-logo">
+      🖼️ Image Tools Pro
+    </div>
+
+    <p class="footer-text">
+      Simple online image tools for everyday image
+      editing, conversion and optimization.
+    </p>
+
+    <div class="footer-links">
+
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Image Tools Pro. All rights reserved.
+    </div>
+
+  </div>
 
 </footer>
 
+
 <script>
 
-function toggleDark(){
+function toggleTheme(){
 
   document.body.classList.toggle("dark");
 
   if(document.body.classList.contains("dark")){
-    localStorage.setItem("theme","dark");
+
+    localStorage.setItem("imageToolsTheme","dark");
+
   }else{
-    localStorage.setItem("theme","light");
+
+    localStorage.setItem("imageToolsTheme","light");
+
   }
 
 }
 
-if(localStorage.getItem("theme")==="dark"){
+
+if(localStorage.getItem("imageToolsTheme")==="dark"){
+
   document.body.classList.add("dark");
+
 }
+
 
 function searchTools(){
 
-  const input =
+  const query =
     document.getElementById("searchBox")
-    .value.toLowerCase();
+    .value
+    .toLowerCase()
+    .trim();
 
   const cards =
     document.querySelectorAll(".tool-card");
@@ -370,8 +864,15 @@ function searchTools(){
     const text =
       card.innerText.toLowerCase();
 
-    card.style.display =
-      text.includes(input) ? "" : "none";
+    if(text.includes(query)){
+
+      card.classList.remove("hidden");
+
+    }else{
+
+      card.classList.add("hidden");
+
+    }
 
   });
 
