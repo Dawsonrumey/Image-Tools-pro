@@ -1,1 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Image Tools Pro – Free Online Image Tools</title>
+
+<meta name="description" content="Free online image tools for compression, resizing, conversion, cropping, WebP, Base64 and more.">
+<meta name="robots" content="index, follow">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+  line-height:1.6;
+}
+
+header{
+  background:#4f46e5;
+  color:white;
+  padding:18px 15px;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.header-inner{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:bold;
+}
+
+.theme-btn{
+  border:0;
+  background:white;
+  color:#4f46e5;
+  padding:9px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.hero{
+  max-width:1100px;
+  margin:auto;
+  padding:55px 18px 35px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:36px;
+  margin-bottom:12px;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:#5b6475;
+  font-size:17px;
+}
+
+.search{
+  max-width:600px;
+  margin:25px auto 10px;
+}
+
+.search input{
+  width:100%;
+  padding:14px;
+  border:1px solid #d7dbe5;
+  border-radius:10px;
+  font-size:16px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px 18px 50px;
+}
+
+.section-title{
+  text-align:center;
+  margin:25px 0;
+}
+
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.tool-card{
+  background:white;
+  border:1px solid #e5e7eb;
+  border-radius:15px;
+  padding:22px;
+  text-decoration:none;
+  color:inherit;
+  transition:.2s;
+}
+
+.tool-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.tool-icon{
+  font-size:35px;
+  margin-bottom:10px;
+}
+
+.tool-card h3{
+  margin-bottom:7px;
+  color:#272f40;
+}
+
+.tool-card p{
+  color:#687386;
+  font-size:14px;
+}
+
+.info{
+  background:white;
+  border-radius:15px;
+  padding:25px;
+  margin-top:40px;
+  border:1px solid #e5e7eb;
+}
+
+.info h2{
+  margin-bottom:10px;
+}
+
+footer{
+  background:#111827;
+  color:#d1d5db;
+  text-align:center;
+  padding:30px 15px;
+}
+
+footer a{
+  color:#a5b4fc;
+  text-decoration:none;
+  margin:0 7px;
+}
+
+@media(max-width:800px){
+  .tools-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:520px){
+  .hero h1{
+    font-size:28px;
+  }
+
+  .tools-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+.dark{
+  background:#111827;
+  color:#f3f4f6;
+}
+
+.dark .hero p,
+.dark .tool-card p{
+  color:#cbd5e1;
+}
+
+.dark .tool-card,
+.dark .info{
+  background:#1f2937;
+  border-color:#374151;
+}
+
+.dark .tool-card h3{
+  color:white;
+}
+
+.dark .search input{
+  background:#1f2937;
+  color:white;
+  border-color:#4b5563;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">🖼️ Image Tools Pro</div>
+    <button class="theme-btn" onclick="toggleDark()">🌙 Theme</button>
+  </div>
+</header>
+
+<section class="hero">
+
+  <h1>Free Online Image Tools</h1>
+
+  <p>
+    Compress, resize, convert, crop and optimize your images
+    easily from your browser.
+  </p>
+
+  <div class="search">
+    <input
+      type="text"
+      id="searchBox"
+      placeholder="🔍 Search image tools..."
+      onkeyup="searchTools()">
+  </div>
+
+</section>
+
+<main class="container">
+
+  <h2 class="section-title">🛠️ Image Tools</h2>
+
+  <div class="tools-grid" id="toolsGrid">
+
+    <a href="#" class="tool-card">
+      <div class="tool-icon">📦</div>
+      <h3>Image Compressor</h3>
+      <p>Reduce image file size while keeping good quality.</p>
+    </a>
+
+    <a href="#" class="tool-card">
+      <div class="tool-icon">📐</div>
+      <h3>Image Resizer</h3>
+      <p>Resize images to your preferred width and height.</p>
+    </a>
+
+    <a href="#" class="tool-card">
+      <div class="tool-icon">🖼️</div>
+      <h3>JPG to PNG</h3>
+      <p>Convert JPG images into PNG format.</p>
+    </a>
+
+    <a href="#" class="tool-card">
+      <div class="tool-icon">🔄</div>
+      <h3>PNG to JPG</h3>
+      <p>Convert PNG images into JPG format.</p>
+    </a>
+
+    <a href="#" class="tool-card">
+      <div class="tool-icon">🔁</div>
+      <h3>Image Converter</h3>
+      <p>Convert images between common formats.</p>
+    </a>
+
+    <a href="#" class="tool-card">
+      <div class="tool-icon">✂️</div>
+      <h3>Image Cropper</h3>
+      <p>Crop your image to the exact area you need.</p>
+    </a>
+
+    <a href="#" class="tool-card">
+      <div class="tool-icon">📊</div>
+      <h3>Image Size Checker</h3>
+      <p>Check image dimensions and file information.</p>
+    </a>
+
+    <a href="#" class="tool-card">
+      <div class="tool-icon">🔤</div>
+      <h3>Image to Base64</h3>
+      <p>Convert images into Base64 encoded data.</p>
+    </a>
+
+    <a href="#" class="tool-card">
+      <div class="tool-icon">⚡</div>
+      <h3>WebP Converter</h3>
+      <p>Convert supported images to modern WebP format.</p>
+    </a>
+
+    <a href="#" class="tool-card">
+      <div class="tool-icon">↻</div>
+      <h3>Image Rotator</h3>
+      <p>Rotate images clockwise or counter-clockwise.</p>
+    </a>
+
+  </div>
+
+  <section class="info">
+
+    <h2>Why use Image Tools Pro?</h2>
+
+    <p>
+      Image Tools Pro is designed to provide simple and
+      convenient image utilities directly from your browser.
+      Our goal is to make common image tasks easy on both
+      mobile phones and computers.
+    </p>
+
+    <br>
+
+    <h2>Privacy</h2>
+
+    <p>
+      We aim to process images directly in your browser
+      whenever possible. Do not upload sensitive images
+      until the individual tool's processing method is clearly
+      explained.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <p>© 2026 Image Tools Pro</p>
+
+  <p>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </p>
+
+</footer>
+
+<script>
+
+function toggleDark(){
+
+  document.body.classList.toggle("dark");
+
+  if(document.body.classList.contains("dark")){
+    localStorage.setItem("theme","dark");
+  }else{
+    localStorage.setItem("theme","light");
+  }
+
+}
+
+if(localStorage.getItem("theme")==="dark"){
+  document.body.classList.add("dark");
+}
+
+function searchTools(){
+
+  const input =
+    document.getElementById("searchBox")
+    .value.toLowerCase();
+
+  const cards =
+    document.querySelectorAll(".tool-card");
+
+  cards.forEach(card => {
+
+    const text =
+      card.innerText.toLowerCase();
+
+    card.style.display =
+      text.includes(input) ? "" : "none";
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
