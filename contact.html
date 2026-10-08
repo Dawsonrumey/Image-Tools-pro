@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Image Tools Pro</title>
+
+<meta name="description" content="Contact Image Tools Pro for questions, feedback, bug reports and suggestions about our free online image tools.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://dawsonrumey.github.io/Image-Tools-pro/contact.html">
+
+<meta property="og:title" content="Contact Image Tools Pro">
+<meta property="og:description" content="Contact Image Tools Pro with your questions, feedback or suggestions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dawsonrumey.github.io/Image-Tools-pro/contact.html">
+
+<style>
+:root{
+  --bg:#f5f7ff;
+  --surface:rgba(255,255,255,.72);
+  --surface-solid:#fff;
+  --text:#111827;
+  --muted:#687386;
+  --border:rgba(99,102,241,.13);
+  --primary:#5b5cf0;
+  --secondary:#7c3aed;
+  --pink:#ec4899;
+  --shadow:0 18px 55px rgba(44,48,100,.10);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.bg-glow{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  overflow:hidden;
+}
+
+.glow{
+  position:absolute;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.22;
+}
+
+.glow-one{
+  background:#7c3aed;
+  top:-100px;
+  left:-100px;
+}
+
+.glow-two{
+  background:#ec4899;
+  top:40%;
+  right:-130px;
+}
+
+.glow-three{
+  background:#5b5cf0;
+  bottom:-150px;
+  left:35%;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  background:rgba(245,247,255,.78);
+  border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:800;
+  cursor:pointer;
+  background:linear-gradient(90deg,var(--primary),var(--secondary),var(--pink));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.theme-btn{
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.container{
+  max-width:950px;
+  margin:auto;
+  padding:55px 20px 75px;
+}
+
+.hero{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:30px;
+  background:rgba(91,92,240,.10);
+  color:var(--primary);
+  font-weight:700;
+  font-size:13px;
+  margin-bottom:15px;
+}
+
+h1{
+  font-size:clamp(34px,7vw,56px);
+  line-height:1.08;
+  margin-bottom:15px;
+}
+
+.gradient-text{
+  background:linear-gradient(90deg,var(--primary),var(--secondary),var(--pink));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.7;
+}
+
+.content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+
+.full{
+  grid-column:1 / -1;
+}
+
+.card h2{
+  font-size:23px;
+  margin-bottom:12px;
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.8;
+}
+
+.contact-list{
+  display:grid;
+  gap:12px;
+  margin-top:18px;
+}
+
+.contact-item{
+  padding:16px;
+  border-radius:15px;
+  background:rgba(91,92,240,.055);
+  border:1px solid var(--border);
+}
+
+.contact-item strong{
+  display:block;
+  margin-bottom:5px;
+}
+
+.contact-item span{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.form-group{
+  margin-bottom:16px;
+}
+
+.form-group label{
+  display:block;
+  font-weight:700;
+  margin-bottom:7px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--surface-solid);
+  color:var(--text);
+  outline:none;
+  font-family:inherit;
+  font-size:15px;
+}
+
+.form-group textarea{
+  min-height:150px;
+  resize:vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(91,92,240,.10);
+}
+
+.btn{
+  border:0;
+  padding:13px 21px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#fff;
+  font-weight:700;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.btn:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+}
+
+.notice{
+  display:none;
+  margin-top:15px;
+  padding:13px;
+  border-radius:12px;
+  line-height:1.6;
+  background:rgba(16,185,129,.08);
+  border:1px solid rgba(16,185,129,.20);
+}
+
+footer{
+  border-top:1px solid var(--border);
+  padding:25px 20px;
+  text-align:center;
+  color:var(--muted);
+}
+
+footer a{
+  color:var(--primary);
+  text-decoration:none;
+  margin:0 8px;
+}
+
+footer a:hover{
+  text-decoration:underline;
+}
+
+body.dark{
+  --bg:#0b1020;
+  --surface:rgba(17,24,39,.72);
+  --surface-solid:#111827;
+  --text:#f3f4f6;
+  --muted:#9ca3af;
+  --border:rgba(139,92,246,.20);
+  --shadow:0 18px 55px rgba(0,0,0,.30);
+}
+
+body.dark header{
+  background:rgba(11,16,32,.78);
+}
+
+body.dark .form-group input,
+body.dark .form-group textarea,
+body.dark .form-group select{
+  background:#111827;
+}
+
+@media(max-width:700px){
+
+  .header-inner{
+    padding:14px 15px;
+  }
+
+  .logo{
+    font-size:17px;
+  }
+
+  .container{
+    padding:35px 14px 55px;
+  }
+
+  .content{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .card{
+    padding:20px;
+    border-radius:18px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-glow">
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+  <div class="glow glow-three"></div>
+</div>
+
+<header>
+
+  <div class="header-inner">
+
+    <div
+      class="logo"
+      onclick="location.href='index.html'"
+    >
+      🖼️ Image Tools Pro
+    </div>
+
+    <button
+      class="theme-btn"
+      onclick="toggleTheme()"
+      id="themeBtn"
+      aria-label="Toggle dark mode"
+    >
+      🌙
+    </button>
+
+  </div>
+
+</header>
+
+<main class="container">
+
+  <section class="hero">
+
+    <div class="badge">
+      💬 We'd Love to Hear From You
+    </div>
+
+    <h1>
+      Contact
+      <span class="gradient-text">Us</span>
+    </h1>
+
+    <p>
+      Have a question, suggestion or found a problem?
+      We'd love to hear your feedback.
+    </p>
+
+  </section>
+
+  <section class="content">
+
+    <article class="card">
+
+      <h2>📩 Get in Touch</h2>
+
+      <p>
+        You can use the contact form to send feedback,
+        suggestions, bug reports or questions about
+        Image Tools Pro.
+      </p>
+
+      <div class="contact-list">
+
+        <div class="contact-item">
+          <strong>🐞 Bug Report</strong>
+          <span>
+            Tell us if one of the image tools is not working as expected.
+          </span>
+        </div>
+
+        <div class="contact-item">
+          <strong>💡 Suggestions</strong>
+          <span>
+            Suggest a new tool or feature that could improve the website.
+          </span>
+        </div>
+
+        <div class="contact-item">
+          <strong>❓ General Questions</strong>
+          <span>
+            Send us your questions about using Image Tools Pro.
+          </span>
+        </div>
+
+      </div>
+
+    </article>
+
+    <article class="card">
+
+      <h2>✉️ Send a Message</h2>
+
+      <form id="contactForm">
+
+        <div class="form-group">
+
+          <label for="name">
+            Name
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name"
+            maxlength="100"
+            required
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="email">
+            Email
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            maxlength="150"
+            required
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="topic">
+            Topic
+          </label>
+
+          <select
+            id="topic"
+            name="topic"
+          >
+
+            <option value="General Question">
+              General Question
+            </option>
+
+            <option value="Bug Report">
+              Bug Report
+            </option>
+
+            <option value="Suggestion">
+              Suggestion
+            </option>
+
+            <option value="Other">
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="message">
+            Message
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Write your message..."
+            maxlength="2000"
+            required
+          ></textarea>
+
+        </div>
+
+        <button
+          type="submit"
+          class="btn"
+        >
+          📤 Send Message
+        </button>
+
+      </form>
+
+      <div
+        class="notice"
+        id="notice"
+      ></div>
+
+    </article>
+
+    <article class="card full">
+
+      <h2>🔐 Privacy Note</h2>
+
+      <p>
+        Please do not include passwords, payment information,
+        private identification numbers or other sensitive information
+        in a contact message.
+      </p>
+
+    </article>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div>
+    © 2026 Image Tools Pro
+  </div>
+
+  <div style="margin-top:10px;">
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+
+  </div>
+
+</footer>
+
+<script>
+
+// ==========================
+// THEME
+// ==========================
+
+function applyTheme(){
+
+  const savedTheme =
+    localStorage.getItem("imageToolsTheme");
+
+  if(savedTheme === "dark"){
+
+    document.body.classList.add("dark");
+
+    document.getElementById("themeBtn").textContent =
+      "☀️";
+
+  }else{
+
+    document.body.classList.remove("dark");
+
+    document.getElementById("themeBtn").textContent =
+      "🌙";
+
+  }
+
+}
+
+function toggleTheme(){
+
+  const isDark =
+    document.body.classList.toggle("dark");
+
+  localStorage.setItem(
+    "imageToolsTheme",
+    isDark ? "dark" : "light"
+  );
+
+  document.getElementById("themeBtn").textContent =
+    isDark ? "☀️" : "🌙";
+
+}
+
+applyTheme();
+
+
+// ==========================
+// CONTACT FORM
+// ==========================
+
+const contactForm =
+  document.getElementById("contactForm");
+
+const notice =
+  document.getElementById("notice");
+
+contactForm.addEventListener(
+  "submit",
+  function(event){
+
+    event.preventDefault();
+
+    const name =
+      document.getElementById("name").value.trim();
+
+    const email =
+      document.getElementById("email").value.trim();
+
+    const topic =
+      document.getElementById("topic").value;
+
+    const message =
+      document.getElementById("message").value.trim();
+
+    if(!name || !email || !message){
+
+      showNotice(
+        "Please complete all required fields.",
+        false
+      );
+
+      return;
+    }
+
+    const subject =
+      encodeURIComponent(
+        "Image Tools Pro - " + topic
+      );
+
+    const body =
+      encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\nTopic: " + topic +
+        "\n\nMessage:\n" + message
+      );
+
+    /*
+      Replace the email address below
+      with your own support email before launch.
+    */
+
+    const supportEmail =
+      "dawson.rumey1996@gmail.com";
+
+    window.location.href =
+      "mailto:" +
+      supportEmail +
+      "?subject=" +
+      subject +
+      "&body=" +
+      body;
+
+    showNotice(
+      "Your email app should now open with the message prepared.",
+      true
+    );
+
+  }
+);
+
+
+function showNotice(message, success){
+
+  notice.textContent =
+    message;
+
+  notice.style.display =
+    "block";
+
+  if(success){
+
+    notice.style.background =
+      "rgba(16,185,129,.08)";
+
+  }else{
+
+    notice.style.background =
+      "rgba(239,68,68,.08)";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
