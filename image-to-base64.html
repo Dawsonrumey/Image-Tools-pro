@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Image to Base64 – Free Online Converter | Image Tools Pro</title>
+
+<meta name="description" content="Convert images to Base64 online for free. Copy or download the Base64 code directly from your browser.">
+<meta name="theme-color" content="#5b5cf0">
+
+<style>
+:root{
+  --bg:#f5f7ff;
+  --surface:rgba(255,255,255,.72);
+  --surface-solid:#fff;
+  --text:#111827;
+  --muted:#687386;
+  --border:rgba(99,102,241,.13);
+  --primary:#5b5cf0;
+  --secondary:#7c3aed;
+  --pink:#ec4899;
+  --shadow:0 18px 55px rgba(44,48,100,.10);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+button,
+textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+.bg-glow{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:-1;
+}
+
+.glow{
+  position:absolute;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.25;
+}
+
+.glow-one{
+  background:#8b5cf6;
+  top:-100px;
+  left:-80px;
+}
+
+.glow-two{
+  background:#ec4899;
+  right:-100px;
+  top:35%;
+}
+
+.glow-three{
+  background:#3b82f6;
+  bottom:-150px;
+  left:30%;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.back-btn,
+.theme-btn{
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  padding:10px 15px;
+  border-radius:12px;
+  transition:.2s;
+}
+
+.back-btn:hover,
+.theme-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow);
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:45px 20px 70px;
+}
+
+.hero{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:30px;
+  background:rgba(91,92,240,.10);
+  color:var(--primary);
+  font-weight:700;
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+h1{
+  margin:0;
+  font-size:clamp(32px,6vw,56px);
+  line-height:1.05;
+}
+
+.gradient-text{
+  background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary),
+    var(--pink)
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  max-width:680px;
+  margin:18px auto 0;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:16px;
+}
+
+.tool-card{
+  max-width:900px;
+  margin:auto;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:25px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(18px);
+}
+
+.upload-area{
+  border:2px dashed rgba(91,92,240,.35);
+  border-radius:22px;
+  padding:40px 20px;
+  text-align:center;
+  transition:.25s;
+  background:rgba(255,255,255,.35);
+}
+
+.upload-area.dragover{
+  border-color:var(--primary);
+  background:rgba(91,92,240,.08);
+  transform:scale(1.01);
+}
+
+.upload-icon{
+  font-size:50px;
+  margin-bottom:10px;
+}
+
+.upload-area h2{
+  margin:5px 0 8px;
+  font-size:23px;
+}
+
+.upload-area p{
+  color:var(--muted);
+  margin:0 0 18px;
+}
+
+.file-btn{
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:13px;
+  color:white;
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(91,92,240,.22);
+}
+
+#fileInput{
+  display:none;
+}
+
+.error{
+  display:none;
+  margin-top:18px;
+  padding:14px;
+  border-radius:13px;
+  background:rgba(239,68,68,.08);
+  border:1px solid rgba(239,68,68,.2);
+  color:#dc2626;
+  font-weight:600;
+}
+
+.result-section{
+  display:none;
+  margin-top:25px;
+}
+
+.preview-box{
+  background:rgba(255,255,255,.45);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:18px;
+  text-align:center;
+}
+
+.preview-box img{
+  max-width:100%;
+  max-height:350px;
+  border-radius:14px;
+  object-fit:contain;
+  display:block;
+  margin:auto;
+}
+
+.file-name{
+  margin-top:15px;
+  font-weight:800;
+  word-break:break-word;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.info-item{
+  background:var(--surface-solid);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+  text-align:center;
+}
+
+.info-item span{
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  margin-bottom:5px;
+}
+
+.info-item strong{
+  font-size:14px;
+  word-break:break-word;
+}
+
+.output-box{
+  margin-top:20px;
+}
+
+.output-label{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:9px;
+  font-weight:700;
+}
+
+.output-label span{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:normal;
+}
+
+#base64Output{
+  width:100%;
+  min-height:220px;
+  resize:vertical;
+  padding:15px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:var(--surface-solid);
+  color:var(--text);
+  outline:none;
+  font-family:monospace;
+  font-size:12px;
+  line-height:1.55;
+}
+
+#base64Output:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(91,92,240,.10);
+}
+
+.action-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
+}
+
+.action-btn{
+  border:0;
+  padding:13px 20px;
+  border-radius:13px;
+  font-weight:700;
+  transition:.2s;
+}
+
+.copy-btn{
+  color:white;
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+}
+
+.download-btn{
+  color:white;
+  background:linear-gradient(
+    135deg,
+    #059669,
+    #10b981
+  );
+}
+
+.reset-btn{
+  background:rgba(107,114,128,.12);
+  color:var(--text);
+}
+
+.action-btn:hover{
+  transform:translateY(-2px);
+}
+
+.copy-status{
+  display:none;
+  margin-top:12px;
+  text-align:center;
+  color:#059669;
+  font-weight:700;
+  font-size:14px;
+}
+
+.note{
+  margin-top:18px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+  text-align:center;
+}
+
+footer{
+  border-top:1px solid var(--border);
+  padding:28px 20px;
+  text-align:center;
+  color:var(--muted);
+}
+
+.footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+  margin-bottom:12px;
+}
+
+.footer-links a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.footer-links a:hover{
+  color:var(--primary);
+}
+
+body.dark{
+  --bg:#0b1020;
+  --surface:rgba(17,24,39,.72);
+  --surface-solid:#111827;
+  --text:#f3f4f6;
+  --muted:#9ca3af;
+  --border:rgba(139,92,246,.20);
+  --shadow:0 18px 55px rgba(0,0,0,.28);
+}
+
+body.dark header{
+  background:rgba(11,16,32,.72);
+}
+
+body.dark .upload-area,
+body.dark .preview-box{
+  background:rgba(17,24,39,.45);
+}
+
+@media(max-width:850px){
+  .info-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .header-inner{
+    padding:12px 14px;
+  }
+
+  .logo{
+    font-size:17px;
+  }
+
+  .back-btn,
+  .theme-btn{
+    padding:9px 11px;
+    font-size:13px;
+  }
+
+  .container{
+    padding:32px 14px 55px;
+  }
+
+  .tool-card{
+    padding:16px;
+    border-radius:22px;
+  }
+
+  .upload-area{
+    padding:30px 14px;
+  }
+
+  .upload-icon{
+    font-size:42px;
+  }
+
+  .info-grid{
+    gap:8px;
+  }
+
+  .info-item{
+    padding:12px 7px;
+  }
+
+  .action-buttons{
+    flex-direction:column;
+  }
+
+  .action-btn{
+    width:100%;
+  }
+
+  #base64Output{
+    min-height:180px;
+    font-size:11px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-glow">
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+  <div class="glow glow-three"></div>
+</div>
+
+<header>
+  <div class="header-inner">
+
+    <div class="logo" onclick="goHome()">
+      🖼️ Image Tools Pro
+    </div>
+
+    <div class="header-actions">
+      <button class="back-btn" onclick="goHome()">
+        ← Home
+      </button>
+
+      <button
+        class="theme-btn"
+        id="themeBtn"
+        onclick="toggleTheme()"
+      >
+        🌙
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+
+    <div class="badge">
+      🔐 Free • Private • Fast
+    </div>
+
+    <h1>
+      Image to <span class="gradient-text">Base64</span>
+    </h1>
+
+    <p>
+      Convert an image into Base64 code instantly.
+      Copy the code or download it as a text file.
+    </p>
+
+  </section>
+
+  <section class="tool-card">
+
+    <div class="upload-area" id="uploadArea">
+
+      <div class="upload-icon">
+        🖼️
+      </div>
+
+      <h2>
+        Upload Your Image
+      </h2>
+
+      <p>
+        JPG, JPEG, PNG or WebP • Maximum 10MB
+      </p>
+
+      <label
+        class="file-btn"
+        for="fileInput"
+      >
+        Choose Image
+      </label>
+
+      <input
+        type="file"
+        id="fileInput"
+        accept="image/jpeg,image/png,image/webp"
+      >
+
+    </div>
+
+    <div
+      class="error"
+      id="errorBox"
+    ></div>
+
+    <section
+      class="result-section"
+      id="resultSection"
+    >
+
+      <div class="preview-box">
+
+        <img
+          id="previewImage"
+          alt="Uploaded image preview"
+        >
+
+        <div
+          class="file-name"
+          id="fileName"
+        >
+          -
+        </div>
+
+      </div>
+
+      <div class="info-grid">
+
+        <div class="info-item">
+
+          <span>
+            File Size
+          </span>
+
+          <strong id="fileSize">
+            -
+          </strong>
+
+        </div>
+
+        <div class="info-item">
+
+          <span>
+            Dimensions
+          </span>
+
+          <strong id="dimensions">
+            -
+          </strong>
+
+        </div>
+
+        <div class="info-item">
+
+          <span>
+            Format
+          </span>
+
+          <strong id="format">
+            -
+          </strong>
+
+        </div>
+
+      </div>
+
+      <div class="output-box">
+
+        <div class="output-label">
+
+          <div>
+            Base64 Output
+          </div>
+
+          <span id="characterCount">
+            0 characters
+          </span>
+
+        </div>
+
+        <textarea
+          id="base64Output"
+          readonly
+          spellcheck="false"
+          placeholder="Your Base64 code will appear here..."
+        ></textarea>
+
+      </div>
+
+      <div class="action-buttons">
+
+        <button
+          class="action-btn copy-btn"
+          onclick="copyBase64()"
+        >
+          📋 Copy Base64
+        </button>
+
+        <button
+          class="action-btn download-btn"
+          onclick="downloadBase64()"
+        >
+          💾 Download TXT
+        </button>
+
+        <button
+          class="action-btn reset-btn"
+          onclick="resetTool()"
+        >
+          ✕ Reset
+        </button>
+
+      </div>
+
+      <div
+        class="copy-status"
+        id="copyStatus"
+      >
+        ✅ Base64 copied successfully!
+      </div>
+
+      <div class="note">
+        🔒 Your image is processed locally in your browser.
+        It is not uploaded to a server.
+      </div>
+
+    </section>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="footer-links">
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a href="privacy.html">
+      Privacy Policy
+    </a>
+
+    <a href="terms.html">
+      Terms
+    </a>
+
+  </div>
+
+  <div>
+    © 2026 Image Tools Pro • Free Online Image Tools
+  </div>
+
+</footer>
+
+<script>
+const fileInput =
+  document.getElementById("fileInput");
+
+const uploadArea =
+  document.getElementById("uploadArea");
+
+const resultSection =
+  document.getElementById("resultSection");
+
+const previewImage =
+  document.getElementById("previewImage");
+
+const errorBox =
+  document.getElementById("errorBox");
+
+const fileName =
+  document.getElementById("fileName");
+
+const fileSize =
+  document.getElementById("fileSize");
+
+const dimensions =
+  document.getElementById("dimensions");
+
+const format =
+  document.getElementById("format");
+
+const base64Output =
+  document.getElementById("base64Output");
+
+const characterCount =
+  document.getElementById("characterCount");
+
+const copyStatus =
+  document.getElementById("copyStatus");
+
+const MAX_SIZE =
+  10 * 1024 * 1024;
+
+let currentFile = null;
+let currentBase64 = "";
+
+fileInput.addEventListener(
+  "change",
+  function(){
+
+    if(this.files && this.files[0]){
+      processImage(this.files[0]);
+    }
+
+  }
+);
+
+["dragenter","dragover"].forEach(
+  function(eventName){
+
+    uploadArea.addEventListener(
+      eventName,
+      function(e){
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        uploadArea.classList.add(
+          "dragover"
+        );
+
+      }
+    );
+
+  }
+);
+
+["dragleave","drop"].forEach(
+  function(eventName){
+
+    uploadArea.addEventListener(
+      eventName,
+      function(e){
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        uploadArea.classList.remove(
+          "dragover"
+        );
+
+      }
+    );
+
+  }
+);
+
+uploadArea.addEventListener(
+  "drop",
+  function(e){
+
+    const files =
+      e.dataTransfer.files;
+
+    if(files && files[0]){
+      processImage(files[0]);
+    }
+
+  }
+);
+
+function processImage(file){
+
+  hideError();
+
+  copyStatus.style.display =
+    "none";
+
+  if(!file.type.startsWith("image/")){
+
+    showError(
+      "Please select a valid image file."
+    );
+
+    return;
+  }
+
+  if(![
+    "image/jpeg",
+    "image/png",
+    "image/webp"
+  ].includes(file.type)){
+
+    showError(
+      "Only JPG, PNG and WebP images are supported."
+    );
+
+    return;
+  }
+
+  if(file.size > MAX_SIZE){
+
+    showError(
+      "File is too large. Maximum allowed size is 10MB."
+    );
+
+    return;
+  }
+
+  currentFile = file;
+
+  const reader =
+    new FileReader();
+
+  reader.onload = function(e){
+
+    currentBase64 =
+      e.target.result;
+
+    base64Output.value =
+      currentBase64;
+
+    characterCount.textContent =
+      formatNumber(
+        currentBase64.length
+      ) +
+      " characters";
+
+    previewImage.src =
+      currentBase64;
+
+    fileName.textContent =
+      file.name;
+
+    fileSize.textContent =
+      formatBytes(file.size);
+
+    format.textContent =
+      getFormatName(file.type);
+
+    const img =
+      new Image();
+
+    img.onload = function(){
+
+      dimensions.textContent =
+        img.naturalWidth +
+        " × " +
+        img.naturalHeight +
+        " px";
+
+      resultSection.style.display =
+        "block";
+
+    };
+
+    img.onerror = function(){
+
+      showError(
+        "Could not read the image. Please try another file."
+      );
+
+    };
+
+    img.src =
+      currentBase64;
+
+  };
+
+  reader.onerror = function(){
+
+    showError(
+      "Could not read this file. Please try again."
+    );
+
+  };
+
+  reader.readAsDataURL(file);
+}
+
+async function copyBase64(){
+
+  if(!currentBase64){
+
+    showError(
+      "Please upload an image first."
+    );
+
+    return;
+  }
+
+  hideError();
+
+  try{
+
+    await navigator.clipboard.writeText(
+      currentBase64
+    );
+
+  }catch(error){
+
+    base64Output.focus();
+    base64Output.select();
+
+    try{
+
+      document.execCommand("copy");
+
+    }catch(copyError){
+
+      showError(
+        "Copy failed. Please select and copy the Base64 text manually."
+      );
+
+      return;
+    }
+
+  }
+
+  copyStatus.style.display =
+    "block";
+
+  setTimeout(function(){
+
+    copyStatus.style.display =
+      "none";
+
+  },2500);
+}
+
+function downloadBase64(){
+
+  if(!currentBase64){
+
+    showError(
+      "Please upload an image first."
+    );
+
+    return;
+  }
+
+  hideError();
+
+  const blob =
+    new Blob(
+      [currentBase64],
+      {type:"text/plain;charset=utf-8"}
+    );
+
+  const url =
+    URL.createObjectURL(blob);
+
+  const link =
+    document.createElement("a");
+
+  link.href =
+    url;
+
+  const baseName =
+    currentFile
+      ? currentFile.name.replace(
+          /\.[^/.]+$/,
+          ""
+        )
+      : "image";
+
+  link.download =
+    baseName + "-base64.txt";
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  link.remove();
+
+  setTimeout(function(){
+
+    URL.revokeObjectURL(url);
+
+  },1000);
+}
+
+function resetTool(){
+
+  currentFile = null;
+  currentBase64 = "";
+
+  fileInput.value = "";
+
+  previewImage.removeAttribute(
+    "src"
+  );
+
+  base64Output.value =
+    "";
+
+  characterCount.textContent =
+    "0 characters";
+
+  resultSection.style.display =
+    "none";
+
+  copyStatus.style.display =
+    "none";
+
+  hideError();
+}
+
+function getFormatName(type){
+
+  if(type === "image/jpeg"){
+    return "JPG";
+  }
+
+  if(type === "image/png"){
+    return "PNG";
+  }
+
+  if(type === "image/webp"){
+    return "WebP";
+  }
+
+  return type;
+}
+
+function formatBytes(bytes){
+
+  if(bytes === 0){
+    return "0 Bytes";
+  }
+
+  const units = [
+    "Bytes",
+    "KB",
+    "MB",
+    "GB"
+  ];
+
+  const index =
+    Math.floor(
+      Math.log(bytes) /
+      Math.log(1024)
+    );
+
+  return (
+    parseFloat(
+      (
+        bytes /
+        Math.pow(1024,index)
+      ).toFixed(2)
+    ) +
+    " " +
+    units[index]
+  );
+}
+
+function formatNumber(number){
+
+  return number.toLocaleString(
+    "en-US"
+  );
+}
+
+function showError(message){
+
+  errorBox.textContent =
+    message;
+
+  errorBox.style.display =
+    "block";
+}
+
+function hideError(){
+
+  errorBox.textContent =
+    "";
+
+  errorBox.style.display =
+    "none";
+}
+
+function goHome(){
+
+  window.location.href =
+    "index.html";
+}
+
+function toggleTheme(){
+
+  document.body.classList.toggle(
+    "dark"
+  );
+
+  const isDark =
+    document.body.classList.contains(
+      "dark"
+    );
+
+  localStorage.setItem(
+    "imageToolsTheme",
+    isDark ? "dark" : "light"
+  );
+
+  updateThemeButton();
+}
+
+function updateThemeButton(){
+
+  const isDark =
+    document.body.classList.contains(
+      "dark"
+    );
+
+  document.getElementById(
+    "themeBtn"
+  ).textContent =
+    isDark ? "☀️" : "🌙";
+}
+
+(function(){
+
+  const savedTheme =
+    localStorage.getItem(
+      "imageToolsTheme"
+    );
+
+  if(savedTheme === "dark"){
+
+    document.body.classList.add(
+      "dark"
+    );
+
+  }
+
+  updateThemeButton();
+
+})();
+</script>
+
+</body>
+</html>
