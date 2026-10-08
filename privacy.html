@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Privacy Policy – Image Tools Pro</title>
+
+<meta name="description" content="Privacy Policy for Image Tools Pro. Learn how our free online image tools handle uploaded files, local processing, cookies and website information.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://dawsonrumey.github.io/Image-Tools-pro/privacy.html">
+
+<meta property="og:title" content="Privacy Policy – Image Tools Pro">
+<meta property="og:description" content="Learn how Image Tools Pro handles your privacy and image files.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dawsonrumey.github.io/Image-Tools-pro/privacy.html">
+
+<style>
+:root{
+  --bg:#f5f7ff;
+  --surface:rgba(255,255,255,.72);
+  --surface-solid:#fff;
+  --text:#111827;
+  --muted:#687386;
+  --border:rgba(99,102,241,.13);
+  --primary:#5b5cf0;
+  --secondary:#7c3aed;
+  --pink:#ec4899;
+  --shadow:0 18px 55px rgba(44,48,100,.10);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.bg-glow{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  overflow:hidden;
+}
+
+.glow{
+  position:absolute;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.22;
+}
+
+.glow-one{
+  background:#7c3aed;
+  top:-100px;
+  left:-100px;
+}
+
+.glow-two{
+  background:#ec4899;
+  top:40%;
+  right:-130px;
+}
+
+.glow-three{
+  background:#5b5cf0;
+  bottom:-150px;
+  left:35%;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  background:rgba(245,247,255,.78);
+  border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:800;
+  cursor:pointer;
+  background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary),
+    var(--pink)
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.theme-btn{
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:55px 20px 75px;
+}
+
+.hero{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:30px;
+  background:rgba(91,92,240,.10);
+  color:var(--primary);
+  font-weight:700;
+  font-size:13px;
+  margin-bottom:15px;
+}
+
+h1{
+  font-size:clamp(34px,7vw,56px);
+  line-height:1.08;
+  margin-bottom:15px;
+}
+
+.gradient-text{
+  background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary),
+    var(--pink)
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.7;
+}
+
+.policy{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:32px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+
+.policy h2{
+  font-size:23px;
+  margin:28px 0 10px;
+}
+
+.policy h2:first-child{
+  margin-top:0;
+}
+
+.policy p{
+  color:var(--muted);
+  line-height:1.8;
+  margin-bottom:14px;
+}
+
+.policy ul{
+  margin:10px 0 18px 22px;
+  color:var(--muted);
+}
+
+.policy li{
+  line-height:1.8;
+  margin-bottom:7px;
+}
+
+.highlight{
+  padding:18px;
+  border-radius:15px;
+  background:rgba(91,92,240,.06);
+  border:1px solid var(--border);
+  margin:18px 0;
+}
+
+.highlight strong{
+  color:var(--text);
+}
+
+footer{
+  border-top:1px solid var(--border);
+  padding:25px 20px;
+  text-align:center;
+  color:var(--muted);
+}
+
+footer a{
+  color:var(--primary);
+  text-decoration:none;
+  margin:0 8px;
+}
+
+footer a:hover{
+  text-decoration:underline;
+}
+
+body.dark{
+  --bg:#0b1020;
+  --surface:rgba(17,24,39,.72);
+  --surface-solid:#111827;
+  --text:#f3f4f6;
+  --muted:#9ca3af;
+  --border:rgba(139,92,246,.20);
+  --shadow:0 18px 55px rgba(0,0,0,.30);
+}
+
+body.dark header{
+  background:rgba(11,16,32,.78);
+}
+
+@media(max-width:700px){
+
+  .header-inner{
+    padding:14px 15px;
+  }
+
+  .logo{
+    font-size:17px;
+  }
+
+  .container{
+    padding:35px 14px 55px;
+  }
+
+  .policy{
+    padding:21px;
+    border-radius:18px;
+  }
+
+  .policy h2{
+    font-size:21px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-glow">
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+  <div class="glow glow-three"></div>
+</div>
+
+<header>
+
+  <div class="header-inner">
+
+    <div
+      class="logo"
+      onclick="location.href='index.html'"
+    >
+      🖼️ Image Tools Pro
+    </div>
+
+    <button
+      class="theme-btn"
+      onclick="toggleTheme()"
+      id="themeBtn"
+      aria-label="Toggle dark mode"
+    >
+      🌙
+    </button>
+
+  </div>
+
+</header>
+
+<main class="container">
+
+  <section class="hero">
+
+    <div class="badge">
+      🔐 Privacy First
+    </div>
+
+    <h1>
+      Privacy
+      <span class="gradient-text">Policy</span>
+    </h1>
+
+    <p>
+      This Privacy Policy explains how Image Tools Pro
+      handles information when you use our website and
+      online image tools.
+    </p>
+
+  </section>
+
+  <article class="policy">
+
+    <h2>1. Introduction</h2>
+
+    <p>
+      Welcome to Image Tools Pro. We provide free online
+      image tools designed to help users compress, resize,
+      convert, crop, inspect and modify image files.
+    </p>
+
+    <p>
+      We respect your privacy and aim to keep the use of
+      our tools simple, transparent and privacy-conscious.
+    </p>
+
+
+    <h2>2. Image File Processing</h2>
+
+    <p>
+      Many Image Tools Pro tools are designed to process
+      images directly in your web browser using client-side
+      technologies such as JavaScript and HTML Canvas.
+    </p>
+
+    <div class="highlight">
+      <strong>Important:</strong>
+      When a tool processes an image locally in your browser,
+      the image does not need to be uploaded to our server
+      for that processing.
+    </div>
+
+    <p>
+      However, individual tools may work differently.
+      Users should review the behavior of the specific tool
+      they are using before processing sensitive information.
+    </p>
+
+
+    <h2>3. Information You Provide</h2>
+
+    <p>
+      Image Tools Pro generally does not require you to
+      create an account simply to use the image tools.
+    </p>
+
+    <p>
+      If you voluntarily contact us, the information included
+      in your message may include:
+    </p>
+
+    <ul>
+      <li>Your name</li>
+      <li>Your email address</li>
+      <li>Your message</li>
+      <li>Information you choose to provide about a problem or suggestion</li>
+    </ul>
+
+
+    <h2>4. Website Usage Information</h2>
+
+    <p>
+      Like many websites, basic technical information may
+      potentially be processed by hosting, analytics or
+      other website infrastructure providers.
+    </p>
+
+    <p>
+      This may include information such as browser type,
+      device type, approximate usage information, referring
+      pages and general technical information.
+    </p>
+
+
+    <h2>5. Cookies and Local Storage</h2>
+
+    <p>
+      Image Tools Pro may use browser storage technologies
+      such as localStorage to remember website preferences.
+    </p>
+
+    <p>
+      For example, the website may remember whether you
+      selected light mode or dark mode.
+    </p>
+
+    <p>
+      Browser storage can normally be cleared through your
+      browser settings.
+    </p>
+
+
+    <h2>6. Third-Party Services</h2>
+
+    <p>
+      The website may use third-party services in the future,
+      such as hosting, analytics, advertising, security,
+      performance or other infrastructure services.
+    </p>
+
+    <p>
+      These third-party providers may process information
+      according to their own privacy policies and terms.
+    </p>
+
+
+    <h2>7. Advertising</h2>
+
+    <p>
+      If advertising is displayed on Image Tools Pro,
+      advertising providers may use cookies or similar
+      technologies to provide, measure or personalize
+      advertisements according to their own policies.
+    </p>
+
+    <p>
+      Advertising practices may change as the website grows.
+      Users should review the applicable third-party
+      advertising provider's privacy information for more
+      details.
+    </p>
+
+
+    <h2>8. External Links</h2>
+
+    <p>
+      Image Tools Pro may contain links to external websites
+      or services. We are not responsible for the privacy
+      practices, content or security of third-party websites.
+    </p>
+
+    <p>
+      We recommend reviewing the privacy policy of any
+      external website before providing personal information.
+    </p>
+
+
+    <h2>9. Data Security</h2>
+
+    <p>
+      We take reasonable steps to maintain a secure website.
+      However, no internet transmission or online service
+      can be guaranteed to be completely secure.
+    </p>
+
+
+    <h2>10. Children's Privacy</h2>
+
+    <p>
+      Image Tools Pro is a general-purpose website and is not
+      specifically directed toward collecting personal
+      information from children.
+    </p>
+
+
+    <h2>11. Changes to This Policy</h2>
+
+    <p>
+      This Privacy Policy may be updated from time to time
+      as the website, tools or services change.
+    </p>
+
+    <p>
+      Any updated version will be published on this page.
+    </p>
+
+
+    <h2>12. Contact</h2>
+
+    <p>
+      If you have questions about this Privacy Policy or
+      about Image Tools Pro, please visit our
+      <a
+        href="contact.html"
+        style="color:var(--primary);font-weight:700;"
+      >
+        Contact page
+      </a>.
+    </p>
+
+
+    <div class="highlight">
+      <strong>Last Updated:</strong> October 2026
+    </div>
+
+  </article>
+
+</main>
+
+<footer>
+
+  <div>
+    © 2026 Image Tools Pro
+  </div>
+
+  <div style="margin-top:10px;">
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+
+  </div>
+
+</footer>
+
+<script>
+
+function applyTheme(){
+
+  const savedTheme =
+    localStorage.getItem("imageToolsTheme");
+
+  if(savedTheme === "dark"){
+
+    document.body.classList.add("dark");
+
+    document.getElementById("themeBtn").textContent =
+      "☀️";
+
+  }else{
+
+    document.body.classList.remove("dark");
+
+    document.getElementById("themeBtn").textContent =
+      "🌙";
+
+  }
+
+}
+
+function toggleTheme(){
+
+  const isDark =
+    document.body.classList.toggle("dark");
+
+  localStorage.setItem(
+    "imageToolsTheme",
+    isDark ? "dark" : "light"
+  );
+
+  document.getElementById("themeBtn").textContent =
+    isDark ? "☀️" : "🌙";
+
+}
+
+applyTheme();
+
+</script>
+
+</body>
+</html>
