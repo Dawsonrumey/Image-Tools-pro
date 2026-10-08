@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dawsonrumey.github.io/Image-Tools-pro/sitemap.xml
