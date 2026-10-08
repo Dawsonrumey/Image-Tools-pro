@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Image Tools Pro – Free Online Image Tools</title>
+
+<meta name="description" content="Learn about Image Tools Pro, a collection of free online image tools for compressing, resizing, converting, cropping, rotating and optimizing images.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://dawsonrumey.github.io/Image-Tools-pro/about.html">
+
+<meta property="og:title" content="About Image Tools Pro">
+<meta property="og:description" content="Free and easy-to-use online image tools for everyday image tasks.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dawsonrumey.github.io/Image-Tools-pro/about.html">
+
+<style>
+:root{
+  --bg:#f5f7ff;
+  --surface:rgba(255,255,255,.72);
+  --surface-solid:#fff;
+  --text:#111827;
+  --muted:#687386;
+  --border:rgba(99,102,241,.13);
+  --primary:#5b5cf0;
+  --secondary:#7c3aed;
+  --pink:#ec4899;
+  --shadow:0 18px 55px rgba(44,48,100,.10);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.bg-glow{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  overflow:hidden;
+}
+
+.glow{
+  position:absolute;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.22;
+}
+
+.glow-one{
+  background:#7c3aed;
+  top:-100px;
+  left:-100px;
+}
+
+.glow-two{
+  background:#ec4899;
+  top:40%;
+  right:-130px;
+}
+
+.glow-three{
+  background:#5b5cf0;
+  bottom:-150px;
+  left:35%;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  background:rgba(245,247,255,.78);
+  border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:800;
+  cursor:pointer;
+  background:linear-gradient(90deg,var(--primary),var(--secondary),var(--pink));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.theme-btn{
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.container{
+  max-width:950px;
+  margin:auto;
+  padding:55px 20px 75px;
+}
+
+.hero{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:30px;
+  background:rgba(91,92,240,.10);
+  color:var(--primary);
+  font-weight:700;
+  font-size:13px;
+  margin-bottom:15px;
+}
+
+h1{
+  font-size:clamp(34px,7vw,56px);
+  line-height:1.08;
+  margin-bottom:15px;
+}
+
+.gradient-text{
+  background:linear-gradient(90deg,var(--primary),var(--secondary),var(--pink));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.7;
+}
+
+.content{
+  display:grid;
+  gap:20px;
+}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+
+.card h2{
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.8;
+  font-size:16px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:18px;
+}
+
+.feature{
+  padding:18px;
+  border-radius:16px;
+  background:rgba(91,92,240,.055);
+  border:1px solid var(--border);
+}
+
+.feature-icon{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.feature h3{
+  margin-bottom:7px;
+  font-size:17px;
+}
+
+.feature p{
+  font-size:14px;
+  line-height:1.6;
+}
+
+.cta{
+  text-align:center;
+}
+
+.cta p{
+  margin-bottom:18px;
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 21px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+}
+
+footer{
+  border-top:1px solid var(--border);
+  padding:25px 20px;
+  text-align:center;
+  color:var(--muted);
+}
+
+footer a{
+  color:var(--primary);
+  text-decoration:none;
+  margin:0 8px;
+}
+
+footer a:hover{
+  text-decoration:underline;
+}
+
+body.dark{
+  --bg:#0b1020;
+  --surface:rgba(17,24,39,.72);
+  --surface-solid:#111827;
+  --text:#f3f4f6;
+  --muted:#9ca3af;
+  --border:rgba(139,92,246,.20);
+  --shadow:0 18px 55px rgba(0,0,0,.30);
+}
+
+body.dark header{
+  background:rgba(11,16,32,.78);
+}
+
+@media(max-width:600px){
+
+  .header-inner{
+    padding:14px 15px;
+  }
+
+  .logo{
+    font-size:17px;
+  }
+
+  .container{
+    padding:35px 14px 55px;
+  }
+
+  .card{
+    padding:20px;
+    border-radius:18px;
+  }
+
+  .features{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-glow">
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+  <div class="glow glow-three"></div>
+</div>
+
+<header>
+  <div class="header-inner">
+
+    <div class="logo" onclick="location.href='index.html'">
+      🖼️ Image Tools Pro
+    </div>
+
+    <button
+      class="theme-btn"
+      onclick="toggleTheme()"
+      id="themeBtn"
+      aria-label="Toggle dark mode"
+    >
+      🌙
+    </button>
+
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+
+    <div class="badge">
+      ⚡ Simple • Fast • Useful
+    </div>
+
+    <h1>
+      About
+      <span class="gradient-text">Image Tools Pro</span>
+    </h1>
+
+    <p>
+      Simple online image tools designed to make common image tasks
+      faster, easier and more accessible from any modern device.
+    </p>
+
+  </section>
+
+  <section class="content">
+
+    <article class="card">
+
+      <h2>🖼️ What is Image Tools Pro?</h2>
+
+      <p>
+        Image Tools Pro is a collection of free browser-based tools
+        for everyday image tasks. You can compress, resize, convert,
+        crop, rotate and process images without installing desktop
+        software.
+      </p>
+
+      <p style="margin-top:14px;">
+        The tools are designed with a simple interface so they can be
+        used comfortably on both mobile phones and desktop computers.
+      </p>
+
+    </article>
+
+    <article class="card">
+
+      <h2>✨ What You Can Do</h2>
+
+      <div class="features">
+
+        <div class="feature">
+          <div class="feature-icon">🗜️</div>
+          <h3>Compress Images</h3>
+          <p>
+            Reduce image file size while keeping useful image quality.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">📐</div>
+          <h3>Resize Images</h3>
+          <p>
+            Change image dimensions quickly for different uses.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🔄</div>
+          <h3>Convert Formats</h3>
+          <p>
+            Convert images between commonly used image formats.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">✂️</div>
+          <h3>Crop Images</h3>
+          <p>
+            Crop images to focus on the area you need.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">📊</div>
+          <h3>Check Image Size</h3>
+          <p>
+            View image dimensions, format and file size.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🔤</div>
+          <h3>Base64 Conversion</h3>
+          <p>
+            Convert supported images into Base64 data URLs.
+          </p>
+        </div>
+
+      </div>
+
+    </article>
+
+    <article class="card">
+
+      <h2>🔒 Privacy-Friendly Processing</h2>
+
+      <p>
+        Many image operations on Image Tools Pro are performed directly
+        in your browser using client-side processing. This means the
+        selected image can be processed locally without requiring a
+        server upload for those operations.
+      </p>
+
+      <p style="margin-top:14px;">
+        Always review the individual tool's behavior and our Privacy
+        Policy before using the service with sensitive files.
+      </p>
+
+    </article>
+
+    <article class="card">
+
+      <h2>📱 Built for Mobile & Desktop</h2>
+
+      <p>
+        Image Tools Pro uses a responsive interface designed to work
+        across smartphones, tablets and desktop browsers. The goal is
+        to keep image processing simple even when you are working from
+        a mobile device.
+      </p>
+
+    </article>
+
+    <article class="card cta">
+
+      <h2>🚀 Start Using the Tools</h2>
+
+      <p>
+        Explore the available image tools and choose the one you need.
+      </p>
+
+      <a class="btn" href="index.html">
+        Explore Image Tools →
+      </a>
+
+    </article>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div>
+    © 2026 Image Tools Pro
+  </div>
+
+  <div style="margin-top:10px;">
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+
+  </div>
+
+</footer>
+
+<script>
+
+function applyTheme(){
+
+  const savedTheme =
+    localStorage.getItem("imageToolsTheme");
+
+  if(savedTheme === "dark"){
+
+    document.body.classList.add("dark");
+
+    document.getElementById("themeBtn").textContent =
+      "☀️";
+
+  }else{
+
+    document.body.classList.remove("dark");
+
+    document.getElementById("themeBtn").textContent =
+      "🌙";
+
+  }
+
+}
+
+function toggleTheme(){
+
+  const isDark =
+    document.body.classList.toggle("dark");
+
+  localStorage.setItem(
+    "imageToolsTheme",
+    isDark ? "dark" : "light"
+  );
+
+  document.getElementById("themeBtn").textContent =
+    isDark ? "☀️" : "🌙";
+
+}
+
+applyTheme();
+
+</script>
+
+</body>
+</html>
