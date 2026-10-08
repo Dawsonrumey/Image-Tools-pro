@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Terms & Conditions – Image Tools Pro</title>
+
+<meta name="description" content="Terms and Conditions for using Image Tools Pro and its free online image tools.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://dawsonrumey.github.io/Image-Tools-pro/terms.html">
+
+<meta property="og:title" content="Terms & Conditions – Image Tools Pro">
+<meta property="og:description" content="Read the Terms and Conditions for Image Tools Pro.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dawsonrumey.github.io/Image-Tools-pro/terms.html">
+
+<style>
+:root{
+  --bg:#f5f7ff;
+  --surface:rgba(255,255,255,.72);
+  --text:#111827;
+  --muted:#687386;
+  --border:rgba(99,102,241,.13);
+  --primary:#5b5cf0;
+  --secondary:#7c3aed;
+  --pink:#ec4899;
+  --shadow:0 18px 55px rgba(44,48,100,.10);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.bg-glow{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  overflow:hidden;
+}
+
+.glow{
+  position:absolute;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.22;
+}
+
+.glow-one{
+  background:#7c3aed;
+  top:-100px;
+  left:-100px;
+}
+
+.glow-two{
+  background:#ec4899;
+  top:40%;
+  right:-130px;
+}
+
+.glow-three{
+  background:#5b5cf0;
+  bottom:-150px;
+  left:35%;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  background:rgba(245,247,255,.78);
+  border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:800;
+  cursor:pointer;
+  background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary),
+    var(--pink)
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.theme-btn{
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:55px 20px 75px;
+}
+
+.hero{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:30px;
+  background:rgba(91,92,240,.10);
+  color:var(--primary);
+  font-weight:700;
+  font-size:13px;
+  margin-bottom:15px;
+}
+
+h1{
+  font-size:clamp(34px,7vw,56px);
+  line-height:1.08;
+  margin-bottom:15px;
+}
+
+.gradient-text{
+  background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary),
+    var(--pink)
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.7;
+}
+
+.policy{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:32px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+
+.policy h2{
+  font-size:23px;
+  margin:28px 0 10px;
+}
+
+.policy h2:first-child{
+  margin-top:0;
+}
+
+.policy p{
+  color:var(--muted);
+  line-height:1.8;
+  margin-bottom:14px;
+}
+
+.policy ul{
+  margin:10px 0 18px 22px;
+  color:var(--muted);
+}
+
+.policy li{
+  line-height:1.8;
+  margin-bottom:7px;
+}
+
+.highlight{
+  padding:18px;
+  border-radius:15px;
+  background:rgba(91,92,240,.06);
+  border:1px solid var(--border);
+  margin:18px 0;
+}
+
+.highlight strong{
+  color:var(--text);
+}
+
+footer{
+  border-top:1px solid var(--border);
+  padding:25px 20px;
+  text-align:center;
+  color:var(--muted);
+}
+
+footer a{
+  color:var(--primary);
+  text-decoration:none;
+  margin:0 8px;
+}
+
+footer a:hover{
+  text-decoration:underline;
+}
+
+body.dark{
+  --bg:#0b1020;
+  --surface:rgba(17,24,39,.72);
+  --text:#f3f4f6;
+  --muted:#9ca3af;
+  --border:rgba(139,92,246,.20);
+  --shadow:0 18px 55px rgba(0,0,0,.30);
+}
+
+body.dark header{
+  background:rgba(11,16,32,.78);
+}
+
+@media(max-width:700px){
+
+  .header-inner{
+    padding:14px 15px;
+  }
+
+  .logo{
+    font-size:17px;
+  }
+
+  .container{
+    padding:35px 14px 55px;
+  }
+
+  .policy{
+    padding:21px;
+    border-radius:18px;
+  }
+
+  .policy h2{
+    font-size:21px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-glow">
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+  <div class="glow glow-three"></div>
+</div>
+
+<header>
+
+  <div class="header-inner">
+
+    <div
+      class="logo"
+      onclick="location.href='index.html'"
+    >
+      🖼️ Image Tools Pro
+    </div>
+
+    <button
+      class="theme-btn"
+      onclick="toggleTheme()"
+      id="themeBtn"
+      aria-label="Toggle dark mode"
+    >
+      🌙
+    </button>
+
+  </div>
+
+</header>
+
+<main class="container">
+
+  <section class="hero">
+
+    <div class="badge">
+      📄 Website Terms
+    </div>
+
+    <h1>
+      Terms &
+      <span class="gradient-text">Conditions</span>
+    </h1>
+
+    <p>
+      Please read these terms before using Image Tools Pro
+      and its online image tools.
+    </p>
+
+  </section>
+
+  <article class="policy">
+
+    <h2>1. Acceptance of Terms</h2>
+
+    <p>
+      By accessing or using Image Tools Pro, you agree to
+      follow these Terms and Conditions.
+    </p>
+
+    <p>
+      If you do not agree with these terms, please do not
+      use the website or its services.
+    </p>
+
+
+    <h2>2. About the Service</h2>
+
+    <p>
+      Image Tools Pro provides free browser-based image
+      utilities including tools for compression, resizing,
+      conversion, cropping, image information and other
+      image-related tasks.
+    </p>
+
+    <p>
+      Features may be added, modified, suspended or removed
+      as the website develops.
+    </p>
+
+
+    <h2>3. Use of the Tools</h2>
+
+    <p>
+      You may use the available tools for lawful personal,
+      educational or business purposes, subject to these
+      Terms and Conditions.
+    </p>
+
+    <p>
+      You are responsible for ensuring that your use of the
+      website complies with applicable laws and regulations.
+    </p>
+
+
+    <h2>4. Your Files and Content</h2>
+
+    <p>
+      You are responsible for the images and other files
+      that you choose to process using Image Tools Pro.
+    </p>
+
+    <p>
+      You should only process files that you have the legal
+      right or permission to use.
+    </p>
+
+    <div class="highlight">
+      <strong>Important:</strong>
+      Do not use Image Tools Pro to process unlawful,
+      harmful or unauthorized content.
+    </div>
+
+
+    <h2>5. Local Browser Processing</h2>
+
+    <p>
+      Many tools are designed to process images directly
+      inside your browser. This can allow common image
+      operations to happen without uploading the original
+      image to a server.
+    </p>
+
+    <p>
+      However, the exact behavior can differ between tools
+      and may change as the website is updated.
+    </p>
+
+
+    <h2>6. Accuracy of Results</h2>
+
+    <p>
+      Image Tools Pro is provided as a convenient online
+      utility. We do not guarantee that every generated
+      result will meet every user's specific requirements.
+    </p>
+
+    <p>
+      You should review important files and results before
+      using them for professional, commercial or other
+      important purposes.
+    </p>
+
+
+    <h2>7. Availability</h2>
+
+    <p>
+      We aim to keep Image Tools Pro available and
+      functional, but continuous or uninterrupted access
+      cannot be guaranteed.
+    </p>
+
+    <p>
+      The website may occasionally be unavailable because
+      of maintenance, technical problems, hosting issues,
+      updates or circumstances outside our control.
+    </p>
+
+
+    <h2>8. Prohibited Use</h2>
+
+    <p>
+      You must not use Image Tools Pro to:
+    </p>
+
+    <ul>
+      <li>Break applicable laws or regulations.</li>
+      <li>Infringe another person's intellectual property rights.</li>
+      <li>Attempt to damage, disrupt or abuse the website.</li>
+      <li>Attempt to gain unauthorized access to systems or services.</li>
+      <li>Use the service for fraudulent or harmful activities.</li>
+      <li>Interfere with the normal operation of the website.</li>
+    </ul>
+
+
+    <h2>9. Intellectual Property</h2>
+
+    <p>
+      The website design, branding, code, text and other
+      original materials associated with Image Tools Pro
+      may be protected by applicable intellectual property
+      laws.
+    </p>
+
+    <p>
+      You may use the tools as intended, but this does not
+      automatically grant you ownership of the website,
+      source code or branding.
+    </p>
+
+
+    <h2>10. Third-Party Services and Links</h2>
+
+    <p>
+      Image Tools Pro may use or link to third-party
+      services, websites, hosting providers, analytics
+      services, advertising providers or other external
+      services.
+    </p>
+
+    <p>
+      We are not responsible for the availability,
+      content, security or policies of third-party services.
+    </p>
+
+
+    <h2>11. Disclaimer</h2>
+
+    <p>
+      Image Tools Pro is provided on an "as is" and
+      "as available" basis to the extent permitted by
+      applicable law.
+    </p>
+
+    <p>
+      We do not guarantee that the website will always be
+      error-free, uninterrupted or suitable for every
+      particular purpose.
+    </p>
+
+
+    <h2>12. Limitation of Liability</h2>
+
+    <p>
+      To the extent permitted by applicable law, Image Tools
+      Pro and its operators will not be responsible for
+      losses or damages resulting from the use of, or
+      inability to use, the website or its tools.
+    </p>
+
+    <p>
+      Users are responsible for maintaining appropriate
+      backups of important files before processing them.
+    </p>
+
+
+    <h2>13. Changes to These Terms</h2>
+
+    <p>
+      These Terms and Conditions may be updated when the
+      website, tools or services change.
+    </p>
+
+    <p>
+      Updated terms will be published on this page.
+      Continued use of the website after an update means
+      you accept the updated terms to the extent permitted
+      by law.
+    </p>
+
+
+    <h2>14. Contact</h2>
+
+    <p>
+      If you have questions about these Terms and Conditions,
+      please visit our
+      <a
+        href="contact.html"
+        style="color:var(--primary);font-weight:700;"
+      >
+        Contact page
+      </a>.
+    </p>
+
+
+    <div class="highlight">
+      <strong>Last Updated:</strong> October 2026
+    </div>
+
+  </article>
+
+</main>
+
+<footer>
+
+  <div>
+    © 2026 Image Tools Pro
+  </div>
+
+  <div style="margin-top:10px;">
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+
+  </div>
+
+</footer>
+
+<script>
+
+function applyTheme(){
+
+  const savedTheme =
+    localStorage.getItem("imageToolsTheme");
+
+  if(savedTheme === "dark"){
+
+    document.body.classList.add("dark");
+
+    document.getElementById("themeBtn").textContent =
+      "☀️";
+
+  }else{
+
+    document.body.classList.remove("dark");
+
+    document.getElementById("themeBtn").textContent =
+      "🌙";
+
+  }
+
+}
+
+function toggleTheme(){
+
+  const isDark =
+    document.body.classList.toggle("dark");
+
+  localStorage.setItem(
+    "imageToolsTheme",
+    isDark ? "dark" : "light"
+  );
+
+  document.getElementById("themeBtn").textContent =
+    isDark ? "☀️" : "🌙";
+
+}
+
+applyTheme();
+
+</script>
+
+</body>
+</html>
